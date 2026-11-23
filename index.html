@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    // Getting data (GET)
+async function fetchFromPython() {
+  const response = await fetch("http://127.0.0");
+  const data = await response.json();
+  console.log(data.message); // Outputs: "Hello from Python!"
+}
+
+// Sending data (POST)
+async function sendToPython() {
+  const response = await fetch("http://127.0.0", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: "alex" })
+  });
+  const result = await response.json();
+  console.log(result);
+}
+
+  </script>
+</html>
